@@ -26,7 +26,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="clock" class="clock" :style="{ marginTop: clockTop }">
+  <div ref="clock" :style="{ marginTop: clockTop }">
     <p class="remaining">
       Time Remaining
     </p>
@@ -40,15 +40,11 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.clock {
-  margin-top: 100px;
-  color: #daf6ff;
-}
-
 p {
   margin: 0;
   padding: 0;
   line-height: 5rem;
+  color: #daf6ff;
 }
 
 .time {
