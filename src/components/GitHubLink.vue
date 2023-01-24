@@ -32,7 +32,6 @@ div {
 
 a {
   color: #daf6ff;
-  font-size: 1.1rem;
   text-decoration: none;
 }
 
