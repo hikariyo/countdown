@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import dayjs from 'dayjs'
+import { until } from './until.json'
 import { ref, onMounted } from 'vue'
 
-const until = '2023/02/07'
 const untilDayjs = dayjs(until)
+const untilFormatted = untilDayjs.format('YYYY/MM/DD')
 const remaining = ref('')
 const clock = ref<HTMLDivElement>()
 const clockTop = ref('0px')
@@ -25,6 +26,6 @@ onMounted(() => {
   <div class="clock" :style="{ marginTop: clockTop }" ref="clock">
     <p class="remaining">Time Remaining</p>
     <p class="time">{{ remaining }}</p>
-    <p class="until">Until {{ until }}</p>
+    <p class="until">Until {{ untilFormatted }}</p>
   </div>
 </template>
