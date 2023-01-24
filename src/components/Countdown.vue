@@ -1,27 +1,23 @@
 <script setup lang="ts">
 import dayjs from 'dayjs'
-import { onMounted, ref } from 'vue'
+import { computed, ref } from 'vue'
+import { useElementSize, useNow, useWindowSize } from '@vueuse/core'
 
 const { until } = defineProps<{
   until: string
 }>()
 
+const clock = ref<HTMLDivElement>()
+const { height: windowHeight } = useWindowSize()
+const { height: clockHeight } = useElementSize(clock)
+const clockTop = computed(() => `${windowHeight.value / 2 - clockHeight.value / 2}px`)
+
+const now = useNow()
 const untilDayjs = dayjs(until)
 const untilFormatted = untilDayjs.format('YYYY/MM/DD')
-const remaining = ref('')
-const clock = ref<HTMLDivElement>()
-const clockTop = ref('0px')
-
-function update() {
-  const duration = dayjs.duration(untilDayjs.diff(dayjs()))
-  remaining.value = duration.format('DD[d] HH[h] mm[m] ss[s]')
-  const top = window.innerHeight / 2 - clock.value!.clientHeight / 2
-  clockTop.value = `${top}px`
-  requestAnimationFrame(update)
-}
-
-onMounted(() => {
-  update()
+const remainingFormatted = computed(() => {
+  const dur = dayjs.duration(untilDayjs.diff(now.value))
+  return dur.format('DD[d] HH[h] mm[m] ss[s]')
 })
 </script>
 
@@ -31,7 +27,7 @@ onMounted(() => {
       Time Remaining
     </p>
     <p class="time">
-      {{ remaining }}
+      {{ remainingFormatted }}
     </p>
     <p class="until">
       Until {{ untilFormatted }}
