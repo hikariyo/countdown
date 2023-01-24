@@ -32,6 +32,7 @@ div {
 
 a {
   color: #daf6ff;
+  font-size: 1.25rem;
   text-decoration: none;
 }
 
@@ -41,5 +42,11 @@ a {
 
 .hide {
   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  a {
+    font-size: 1rem;
+  }
 }
 </style>

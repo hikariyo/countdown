@@ -39,25 +39,29 @@ const remainingFormatted = computed(() => {
 p {
   margin: 0;
   padding: 0;
-  line-height: 5rem;
+  line-height: 7rem;
   color: #daf6ff;
 }
 
 .time {
-  font-size: 5rem;
+  font-size: 6rem;
 }
 
 .remaining {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .until {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   .time {
     font-size: 4rem;
+  }
+
+  .until {
+    font-size: 1.75rem;
   }
 }
 
