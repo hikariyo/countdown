@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import until from './until.json'
 import Countdown from './components/Countdown.vue'
-import RepositoryLink from './components/SourceCodeLink.vue'
+import GitHubLink from './components/GitHubLink.vue'
 </script>
 
 <template>
   <Countdown :until="until" />
-  <RepositoryLink href="https://github.com/kifuan/countdown" />
+  <GitHubLink href="https://github.com/kifuan/countdown" />
 </template>
 
 <style>
