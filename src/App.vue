@@ -23,7 +23,8 @@ onMounted(() => {
 
 <template>
   <div class="clock" :style="{ marginTop: clockTop }" ref="clock">
-    <p class="text">Time Remaining Until {{ until }}</p>
+    <p class="text">Time Remaining</p>
     <p class="time">{{ remaining }}</p>
+    <p class="text">Until {{ until }}</p>
   </div>
 </template>

@@ -4,9 +4,9 @@ html, body {
 
 body {
   background: #0f3854;
-  background: radial-gradient(ellipse at center,  #0a2e38  0%, #000000 70%);
-  background-size: 100%;
+  background: radial-gradient(ellipse at center,  #0a2e38  0%, #000000 100%);
   overflow: hidden;
+  padding: 0.5rem;
 }
 
 .clock {
@@ -42,13 +42,13 @@ p {
   }
 
   .text {
-    font-size: 1.5rem;
+    font-size: 1.9rem;
   }
 }
 
 @media (max-width: 600px) {
   p {
-    line-height: 3rem;
+    line-height: 4rem;
   }
 
   .time {
@@ -56,6 +56,6 @@ p {
   }
 
   .text {
-    font-size: 1.25rem;
+    font-size: 1.75rem;
   }
 }
