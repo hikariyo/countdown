@@ -11,13 +11,18 @@ body {
 .clock {
   font-family: 'Share Tech Mono', monospace;
   text-align: center;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  margin-top: 100px;
   color: #daf6ff;
   text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
 }
+
+
+p {
+  margin: 0;
+  padding: 0;
+  line-height: 5rem;
+}
+
 
 .time {
   letter-spacing: 0.05rem;
@@ -30,8 +35,26 @@ body {
 }
 
 
-p {
-  margin: 0;
-  padding: 0;
-  line-height: 5rem;
+@media (max-width: 800px) {
+  .time {
+    font-size: 4rem;
+  }
+
+  .text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  p {
+    line-height: 3rem;
+  }
+
+  .time {
+    font-size: 2.5rem;
+  }
+
+  .text {
+    font-size: 1.25rem;
+  }
 }
