@@ -15,7 +15,7 @@ const clockTop = ref('0px')
 function update() {
   const duration = dayjs.duration(untilDayjs.diff(dayjs()))
   remaining.value = duration.format('DD[d] HH[h] mm[m] ss[s]')
-  const top = document.body.clientHeight / 2 - clock.value!.clientHeight / 2
+  const top = window.innerHeight / 2 - clock.value!.clientHeight / 2
   clockTop.value = `${top}px`
   requestAnimationFrame(update)
 }
@@ -41,11 +41,8 @@ onMounted(() => {
 
 <style scoped>
 .clock {
-  font-family: 'Share Tech Mono', monospace;
-  text-align: center;
   margin-top: 100px;
   color: #daf6ff;
-  text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
 }
 
 p {
