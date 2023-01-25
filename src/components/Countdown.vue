@@ -14,10 +14,23 @@ const clockTop = computed(() => `${windowHeight.value / 2 - clockHeight.value / 
 
 const now = useNow()
 const untilDayjs = dayjs(until)
+
+const duration = computed(() => {
+  if (untilDayjs.isBefore(now.value))
+    return dayjs.duration(0)
+
+  return dayjs.duration(untilDayjs.diff(now.value))
+})
+
 const untilFormatted = untilDayjs.format('YYYY/MM/DD')
 const remainingFormatted = computed(() => {
-  const dur = dayjs.duration(untilDayjs.diff(now.value))
-  const days = Math.floor(dur.asDays())
+  const dur = duration.value
+
+  // Make days sized 2 at least.
+  let days = String(Math.floor(dur.asDays()))
+  if (days.length === 1)
+    days = `0${days}`
+
   const hms = dur.format('HH[h] mm[m] ss[s]')
   return `${days}d ${hms}`
 })
