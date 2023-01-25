@@ -17,7 +17,9 @@ const untilDayjs = dayjs(until)
 const untilFormatted = untilDayjs.format('YYYY/MM/DD')
 const remainingFormatted = computed(() => {
   const dur = dayjs.duration(untilDayjs.diff(now.value))
-  return dur.format('DD[d] HH[h] mm[m] ss[s]')
+  const days = Math.floor(dur.asDays())
+  const hms = dur.format('HH[h] mm[m] ss[s]')
+  return `${days}d ${hms}`
 })
 </script>
 
