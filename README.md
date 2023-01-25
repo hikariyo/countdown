@@ -6,6 +6,8 @@ You can visit https://countdown.kifuan.me/ or using your custom date like https:
 
 It **works best on PC**, though mobiles are still adapted.
 
+When the countdown ends, it will show `00d 00h 00m 00s` rather than negative numbers.
+
 # Screenshot
 
 ![Screenshot](./screenshots/1.jpg)
