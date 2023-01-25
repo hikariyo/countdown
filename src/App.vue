@@ -8,8 +8,8 @@ const redirect = useSessionStorage('redirect', '')
 
 onBeforeMount(async () => {
   if (redirect.value) {
-    redirect.value = ''
     await router.push(redirect.value)
+    redirect.value = ''
   }
 })
 </script>
