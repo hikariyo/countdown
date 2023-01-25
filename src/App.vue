@@ -1,10 +1,19 @@
 <script setup lang="ts">
-import until from './until.json'
-import Countdown from './components/Countdown.vue'
-import GitHubLink from './components/GitHubLink.vue'
+import { onBeforeMount } from 'vue'
+import { useRouter } from 'vue-router'
+import { useSessionStorage } from '@vueuse/core'
+
+const router = useRouter()
+const redirect = useSessionStorage('redirect', '')
+
+onBeforeMount(async () => {
+  if (redirect.value) {
+    redirect.value = ''
+    await router.push(redirect.value)
+  }
+})
 </script>
 
 <template>
-  <Countdown :until="until" />
-  <GitHubLink href="https://github.com/kifuan/countdown" />
+  <RouterView />
 </template>
