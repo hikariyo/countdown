@@ -1,21 +1,20 @@
 <script setup lang="ts">
-import { onBeforeMount } from 'vue'
-import { useRouter } from 'vue-router'
-import { useSessionStorage } from '@vueuse/core'
 import GitHubLink from './components/GitHubLink.vue'
+import Countdown from './components/Countdown.vue'
 
-const router = useRouter()
-const redirect = useSessionStorage('redirect', '')
+const defaultDate = '2024/01/01'
 
-onBeforeMount(async () => {
-  if (redirect.value) {
-    await router.push(redirect.value)
-    redirect.value = ''
-  }
-})
+function getUntilDate() {
+  const param = new URL(location.href).searchParams.get('until') || defaultDate
+  if (/\d{8}/.test(param))
+    return `${param.substring(0, 4)}/${param.substring(4, 6)}/${param.substring(6, 8)}`
+  return defaultDate
+}
+
+const until = getUntilDate()
 </script>
 
 <template>
-  <RouterView />
+  <Countdown :until="until" />
   <GitHubLink href="https://github.com/kifuan/countdown" />
 </template>
