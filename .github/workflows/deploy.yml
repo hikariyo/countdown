@@ -28,8 +28,8 @@ jobs:
           node-version: 16
           cache: pnpm
 
-      - name: Install & Generate
-        run: pnpm install && pnpm generate
+      - name: Install & Build
+        run: pnpm install && pnpm build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
