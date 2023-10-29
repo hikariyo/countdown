@@ -16,5 +16,5 @@ const until = getUntilDate()
 
 <template>
   <Countdown :until="until" />
-  <GitHubLink href="https://github.com/kifuan/countdown" />
+  <GitHubLink href="https://github.com/hikariyo/countdown" />
 </template>
