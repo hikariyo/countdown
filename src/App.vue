@@ -2,7 +2,7 @@
 import GitHubLink from './components/GitHubLink.vue'
 import Countdown from './components/Countdown.vue'
 
-const defaultDate = '2023/11/18'
+const defaultDate = '2025/06/07'
 
 function getUntilDate() {
   const param = new URL(location.href).searchParams.get('until') || defaultDate
