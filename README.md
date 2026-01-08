@@ -2,7 +2,9 @@
 
 A simple countdown powered by Vue.js, inspired by [TAKAHASHI's Digital Clock](https://codepen.io/gau/pen/LjQwGp).
 
-You can visit https://countdown.hikariyo.net/ or use your custom date like https://countdown.hikariyo.net?until=20240102. You must provide **8 numbers** representing the year, month, and day, respectively.
+You can visit https://countdown.hikariyo.net/ or use your custom date like https://countdown.hikariyo.net?until=20240102.
+
+For the until param, please provide either 8 digits for the date (YYYYMMDD) or 14 digits for the full timestamp (YYYYMMDDHHmmss).
 
 It **works best on PC**, though mobiles are still adapted.
 
